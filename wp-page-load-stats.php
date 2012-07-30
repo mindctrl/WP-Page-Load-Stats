@@ -88,6 +88,7 @@ class WP_Page_Load_Stats {
 	 * @access public
 	 */
 	function display() {
+	if ( current_user_can( 'edit_theme_options') ) {
 		// Get values we're displaying
 		$timer_stop 		= timer_stop(0);
 		$query_count 		= get_num_queries();
@@ -121,6 +122,7 @@ class WP_Page_Load_Stats {
 		</div>
 		<?php
 	}
+}
 	
 	/**
 	 * let_to_num function.
